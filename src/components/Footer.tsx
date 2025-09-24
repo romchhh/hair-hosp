@@ -15,20 +15,20 @@ export function Footer() {
       </div>
 
       {/* Navigation Links */}
-      <nav className="space-y-6 mb-8 text-center">
-        <Link href="/#gallery" className="block text-white text-xl hover:text-blue-200 transition-colors">
+      <nav className="space-y-5 mb-8 text-center">
+        <Link href="/#gallery" className="block text-white text-[15px] hover:text-blue-200 transition-colors">
           Galeria Przed i Po
         </Link>
-        <Link href="/#surgeons" className="block text-white text-xl hover:text-blue-200 transition-colors">
+        <Link href="/#surgeons" className="block text-white text-[15px] hover:text-blue-200 transition-colors">
           Nasi Chirurdzy
         </Link>
-        <Link href="/#why-us" className="block text-white text-xl hover:text-blue-200 transition-colors">
+        <Link href="/#why-us" className="block text-white text-[15px] hover:text-blue-200 transition-colors">
           Dlaczego My?
         </Link>
-        <Link href="/#process" className="block text-white text-xl hover:text-blue-200 transition-colors">
+        <Link href="/#process" className="block text-white text-[15px] hover:text-blue-200 transition-colors">
           Proces Leczenia
         </Link>
-        <Link href="/#packages" className="block text-white text-xl hover:text-blue-200 transition-colors">
+        <Link href="/#packages" className="block text-white text-[15px] hover:text-blue-200 transition-colors">
           Cena I Pakiety
         </Link>
       </nav>

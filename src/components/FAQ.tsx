@@ -51,7 +51,7 @@ export function FAQ() {
                 onClick={() => setOpenIndex(isOpen ? -1 : index)}
               >
                 <span className="font-semibold text-gray-900">{item.q}</span>
-                <span className={"w-8 h-8 rounded-full flex items-center justify-center " + (isOpen ? "bg-blue-600 text-white" : "bg-blue-100 text-blue-600")}>
+                <span className={"w-9 h-9 rounded-full flex items-center justify-center shrink-0 " + (isOpen ? "bg-blue-600 text-white" : "bg-blue-100 text-blue-600")}>
                   <svg className={"w-4 h-4 transform transition-transform " + (isOpen ? "rotate-180" : "rotate-0")} viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clipRule="evenodd" />
                   </svg>

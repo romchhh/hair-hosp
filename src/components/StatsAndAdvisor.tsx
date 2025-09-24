@@ -3,7 +3,7 @@ import Image from "next/image";
 export function StatsAndAdvisor() {
   return (
     <section className="px-4">
-      <div className="bg-gray-50 rounded-2xl p-6 mb-6">
+      <div className="bg-white rounded-[28px] p-6 mb-6 border border-gray-200/60">
         <div className="mb-6 relative">
           <div className="text-5xl font-normal text-gray-900 mb-2">
             5.2<span className="text-blue-600">K+</span>
@@ -18,6 +18,7 @@ export function StatsAndAdvisor() {
           <p className="text-sm text-gray-600 leading-relaxed mt-3 pr-16">
             Przemiany, które podarowali naszym pacjentom lekarze specjalizujący się w przeszczepach. <span className="text-blue-600 underline">Zostań jednym z nich</span>
           </p>
+          <div className="my-4 mx-2 h-px bg-gray-200/60" />
         </div>
 
         <div className="mb-6">
@@ -45,6 +46,7 @@ export function StatsAndAdvisor() {
           <p className="text-sm text-gray-600 leading-relaxed">
             Wynik satysfakcji naszych klientów odzwierciedla ogólne wrażenia i zadowolenie naszych klientów z naszych usług.
           </p>
+          <div className="my-4 mx-2 h-px bg-gray-200/60" />
         </div>
 
         <div className="flex items-center gap-3 p-4 bg-white rounded-2xl">

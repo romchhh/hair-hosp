@@ -14,9 +14,9 @@ export function Surgeons() {
           <div key={d.id} className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex gap-4">
             <div className="shrink-0">
               {d.id === 1 ? (
-                <Image src="/media/Rectangle 317.png" alt={d.name} width={96} height={112} className="w-24 h-28 rounded-2xl object-cover" />
+                <Image src="/media/Rectangle 317.png" alt={d.name} width={96} height={128} className="w-24 h-32 rounded-2xl object-cover" />
               ) : (
-                <Image src="/media/Rectangle 37.png" alt={d.name} width={96} height={112} className="w-24 h-28 rounded-2xl object-cover" />
+                <Image src="/media/Rectangle 37.png" alt={d.name} width={96} height={128} className="w-24 h-32 rounded-2xl object-cover" />
               )}
             </div>
             <div className="flex-1">
@@ -32,9 +32,25 @@ export function Surgeons() {
                   ))}
                 </div>
               </div>
-              <div className="flex items-center gap-4 text-sm text-gray-700 mt-2">
-                <span>{d.exp}</span>
-                <span>{d.patients}</span>
+              <div className="mt-2 text-sm">
+                {(() => {
+                  const [expVal, ...expRest] = d.exp.split(" ");
+                  const expLbl = expRest.join(" ");
+                  const [patVal, ...patRest] = d.patients.split(" ");
+                  const patLbl = patRest.join(" ");
+                  return (
+                    <>
+                      <div>
+                        <span className="text-gray-900 font-medium">{expVal}</span>{" "}
+                        <span className="text-gray-500">{expLbl}</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-900 font-medium">{patVal}</span>{" "}
+                        <span className="text-gray-500">{patLbl}</span>
+                      </div>
+                    </>
+                  );
+                })()}
               </div>
             </div>
           </div>
