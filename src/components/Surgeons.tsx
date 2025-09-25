@@ -14,9 +14,9 @@ export function Surgeons() {
           <div key={d.id} className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex gap-4">
             <div className="shrink-0">
               {d.id === 1 ? (
-                <Image src="/media/Rectangle 317.png" alt={d.name} width={96} height={128} className="w-24 h-32 rounded-2xl object-cover" />
+                <Image src="/media/Rectangle 2033.png" alt={d.name} width={96} height={144} className="w-24 h-36 rounded-2xl object-cover" />
               ) : (
-                <Image src="/media/Rectangle 37.png" alt={d.name} width={96} height={128} className="w-24 h-32 rounded-2xl object-cover" />
+                <Image src="/media/Rectangle 37.png" alt={d.name} width={96} height={144} className="w-24 h-36 rounded-2xl object-cover" />
               )}
             </div>
             <div className="flex-1">

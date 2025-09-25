@@ -1,7 +1,17 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import ContactForm from "@/components/ContactForm";
 
 export function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (isModalOpen) document.body.classList.add("overflow-hidden");
+    else document.body.classList.remove("overflow-hidden");
+  }, [isModalOpen]);
+
   return (
     <section className="text-center mb-6 px-4">
       <h1 className="text-2xl font-bold text-gray-900 mb-1 leading-tight">
@@ -61,12 +71,12 @@ export function Hero() {
         </div>
       </div>
 
-      <Link href="#contact-form" className="w-full bg-gradient-to-r from-[#207CF2D9] to-[#0169FE] text-white py-4 px-6 rounded-2xl font-medium flex items-center justify-center gap-3 hover:opacity-95 transition-colors text-lg">
+      <button onClick={() => setIsModalOpen(true)} className="w-full bg-gradient-to-r from-[#207CF2D9] to-[#0169FE] text-white py-4 px-6 rounded-2xl font-medium flex items-center justify-center gap-3 hover:opacity-95 transition-colors text-lg">
         <svg className="w-6 h-6 transform rotate-90" fill="currentColor" viewBox="0 0 20 20">
           <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
         </svg>
         Bezpłatna Konsultacja
-      </Link>
+      </button>
       <div className="rounded-2xl overflow-hidden mt-6">
         <Image
           src="/media/image 1.png"
@@ -77,6 +87,24 @@ export function Hero() {
           priority
         />
       </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50">
+          <div className="absolute inset-0 bg-black/40" onClick={() => setIsModalOpen(false)} />
+          <div className="absolute inset-0 flex items-center justify-center p-4">
+            <div className="relative w-full max-w-lg">
+              <button onClick={() => setIsModalOpen(false)} className="absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100">
+                <svg className="w-6 h-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <div className="max-h-[85vh] overflow-auto">
+                <ContactForm isModal={true} onClose={() => setIsModalOpen(false)} />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

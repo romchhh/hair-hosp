@@ -9,7 +9,7 @@ type FormData = {
   email: string;
 };
 
-export default function ContactForm() {
+export default function ContactForm({ isModal = false, onClose }: { isModal?: boolean; onClose?: () => void }) {
   const [data, setData] = useState<FormData>({ name: "", phone: "", email: "" });
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [submitted, setSubmitted] = useState(false);
@@ -60,7 +60,7 @@ export default function ContactForm() {
 
   function fieldClass(invalid?: boolean) {
     return (
-      "w-full rounded-2xl border p-4 text-[16px] transition-all duration-200 " +
+      `w-full rounded-2xl border ${isModal ? 'p-3 text-sm' : 'p-4 text-[16px]'} transition-all duration-200 ` +
       (invalid
         ? "border-red-400 bg-red-50 focus:border-red-500 focus:ring-2 focus:ring-red-100"
         : "border-gray-200 bg-gray-50 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100") +
@@ -69,16 +69,35 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact-form" className="px-4 mt-10 relative">
-      <h2 className="text-[40px] leading-[1.2] font-extrabold text-center mb-8 text-gray-800">
-        Masz jeszcze pytania? Zadaj je nam!
-      </h2>
+    <section id="contact-form" className={`px-4 ${isModal ? 'mt-0' : 'mt-10'} relative`}>
+      {!isModal && (
+        <h2 className={`text-[40px] leading-[1.2] font-extrabold text-center mb-8 text-gray-800`}>
+          Masz jeszcze pytania? Zadaj je nam!
+        </h2>
+      )}
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 max-w-lg mx-auto bg-white p-6 rounded-3xl shadow-lg border border-gray-100 relative z-10"
+        className={`space-y-${isModal ? '4' : '6'} max-w-md mx-auto bg-white ${isModal ? 'p-4' : 'p-6'} rounded-3xl shadow-lg border border-gray-100 relative z-10 text-left`}
       >
+        {isModal && (
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Zamknij"
+            className="absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100"
+          >
+            <svg className="w-6 h-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        )}
+        {isModal && (
+          <h2 className="text-xl leading-[1.2] font-extrabold text-center -mt-1 mb-3 text-gray-800">
+            Masz jeszcze pytania? Zadaj je nam!
+          </h2>
+        )}
         <div>
-          <label className="block mb-3 font-semibold text-gray-700 text-sm">
+          <label className={`block ${isModal ? 'mb-2' : 'mb-3'} font-semibold text-gray-700 ${isModal ? 'text-xs' : 'text-sm'}`}>
             Twoje imię <span className="text-red-500">*</span>
           </label>
           <input
@@ -90,7 +109,7 @@ export default function ContactForm() {
           {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
         </div>
         <div className="relative">
-          <label className="block mb-3 font-semibold text-gray-700 text-sm">
+          <label className={`block ${isModal ? 'mb-2' : 'mb-3'} font-semibold text-gray-700 ${isModal ? 'text-xs' : 'text-sm'}`}>
             Twój numer telefonu <span className="text-red-500">*</span>
           </label>
           <div className="flex">
@@ -100,7 +119,7 @@ export default function ContactForm() {
               className={(errors.phone
                 ? "border-red-400 bg-red-50"
                 : "border-gray-200 bg-gray-50") +
-                " h-16 px-3 flex items-center gap-2 border rounded-l-2xl text-[15px]"}
+                ` ${isModal ? 'h-12 px-2' : 'h-16 px-3'} flex items-center gap-2 border rounded-l-2xl ${isModal ? 'text-sm' : 'text-[15px]'}`}
               aria-haspopup="listbox"
               aria-expanded={isCountryOpen}
             >
@@ -142,7 +161,7 @@ export default function ContactForm() {
           {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
         </div>
         <div>
-          <label className="block mb-3 font-semibold text-gray-700 text-sm">
+          <label className={`block ${isModal ? 'mb-2' : 'mb-3'} font-semibold text-gray-700 ${isModal ? 'text-xs' : 'text-sm'}`}>
             Twoje e-mail <span className="text-red-500">*</span>
           </label>
           <input
@@ -155,7 +174,7 @@ export default function ContactForm() {
         </div>
         <button
           type="submit"
-          className="w-full bg-gradient-to-r from-[#207CF2D9] to-[#0169FE] text-white py-4 px-6 rounded-2xl font-medium flex items-center justify-center gap-3 hover:opacity-95 transition-colors text-lg mt-8"
+          className={`w-full bg-gradient-to-r from-[#207CF2D9] to-[#0169FE] text-white ${isModal ? 'py-3 px-4' : 'py-4 px-6'} rounded-2xl font-medium flex items-center justify-center gap-3 hover:opacity-95 transition-colors ${isModal ? 'text-base' : 'text-lg'} ${isModal ? 'mt-6' : 'mt-8'}`}
         >
           <svg className="w-6 h-6 transform rotate-90" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />

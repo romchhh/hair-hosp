@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -133,6 +133,31 @@ export function Header() {
             Cena I Pakiety
           </Link>
         </nav>
+
+        {/* Divider */}
+        <div className="mx-4 h-px bg-gray-200" />
+
+        {/* Contact section */}
+        <div className="p-4 flex flex-col items-start gap-3">
+          <a href="tel:+48459567415" className="text-lg text-gray-900 font-medium tracking-wide">
+            +48459567415
+          </a>
+          <a
+            href="https://wa.me/48459567415"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="flex items-center justify-center hover:opacity-80 transition-opacity"
+          >
+            <Image 
+              src="/media/whatsapp.png" 
+              alt="WhatsApp" 
+              width={32} 
+              height={32} 
+              className="w-8 h-8"
+            />
+          </a>
+        </div>
       </div>
     </>
   );
