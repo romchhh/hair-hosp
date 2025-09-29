@@ -60,7 +60,7 @@ export default function ContactForm({ isModal = false, onClose }: { isModal?: bo
 
   function fieldClass(invalid?: boolean) {
     return (
-      `w-full rounded-2xl border ${isModal ? 'p-3 text-sm' : 'p-4 text-[16px]'} transition-all duration-200 ` +
+      `w-full rounded-2xl border ${isModal ? 'p-3 text-sm h-12' : 'p-4 text-[16px] h-16'} transition-all duration-200 ` +
       (invalid
         ? "border-red-400 bg-red-50 focus:border-red-500 focus:ring-2 focus:ring-red-100"
         : "border-gray-200 bg-gray-50 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100") +
@@ -119,7 +119,7 @@ export default function ContactForm({ isModal = false, onClose }: { isModal?: bo
               className={(errors.phone
                 ? "border-red-400 bg-red-50"
                 : "border-gray-200 bg-gray-50") +
-                ` ${isModal ? 'h-16 px-3' : 'h-16 px-3'} flex items-center gap-2 border rounded-l-2xl ${isModal ? 'text-[15px]' : 'text-[15px]'}`}
+                ` ${isModal ? 'h-12 px-3' : 'h-16 px-3'} flex items-center gap-2 border rounded-l-2xl ${isModal ? 'text-[15px]' : 'text-[15px]'}`}
               aria-haspopup="listbox"
               aria-expanded={isCountryOpen}
             >
@@ -174,9 +174,9 @@ export default function ContactForm({ isModal = false, onClose }: { isModal?: bo
         </div>
         <button
           type="submit"
-          className={`w-full bg-gradient-to-r from-[#207CF2D9] to-[#0169FE] text-white ${isModal ? 'py-5 px-7 text-xl mt-6' : 'py-4 px-6 text-lg mt-8'} rounded-2xl font-medium flex items-center justify-center gap-3 hover:opacity-95 transition-colors`}
+          className={`w-full bg-gradient-to-r from-[#207CF2D9] to-[#0169FE] text-white ${isModal ? 'py-3 px-4 text-sm mt-4' : 'py-3 px-4 text-sm mt-6'} rounded-2xl font-medium flex items-center justify-center gap-2 hover:opacity-95 transition-colors whitespace-nowrap`}
         >
-          <svg className="w-6 h-6 transform rotate-90" viewBox="0 0 20 20" fill="currentColor">
+          <svg className="w-5 h-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
           </svg>
           Bezpłatna Konsultacja

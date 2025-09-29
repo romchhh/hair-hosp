@@ -1,7 +1,11 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import ContactForm from "@/components/ContactForm";
 
 export function Surgeons() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const doctors = [
     { id:1, name:'Dr. Uğur ÖZDEMİR', title:'Chirurgia plastyczna rekonstrukcyjna i estetyczna', rating:'4.9', exp:'15lat Doświadczenie', patients:'1548 Pacjentów' },
     { id:2, name:'Dr. Uğur ÖZDEMİR', title:'Chirurgia plastyczna rekonstrukcyjna i estetyczna', rating:'4.8', exp:'13lat Doświadczenie', patients:'1920 pacjentów' },
@@ -72,16 +76,39 @@ export function Surgeons() {
               rel="noopener noreferrer"
               aria-label="WhatsApp chat"
             >
-              <Image src="/media/Group 59.png" alt="contact" width={36} height={36} className="w-9 h-9" />
+              <Image src="/media/Group 58.png" alt="WhatsApp" width={36} height={36} className="w-9 h-9" />
             </a>
             <a href="tel:+48459567415" aria-label="Call">
-              <Image src="/media/Group 58.png" alt="menu" width={36} height={36} className="w-9 h-9" />
+              <Image src="/media/Group 59.png" alt="call" width={36} height={36} className="w-9 h-9" />
             </a>
           </div>
         </div>
         <p className="text-sm text-gray-600 mt-3">Które specjalizują się w przeszczepach włosów i są dobierane specjalnie pod kątem Twoich potrzeb i sytuacji</p>
-        <Link href="#contact-form" className="mt-6 block w-full bg-[#0B2546] text-white py-3 rounded-[28px] font-medium text-center">Uzyskaj Konsultację</Link>
+        <button 
+          onClick={() => setIsModalOpen(true)} 
+          className="mt-6 block w-full bg-[#0B2546] text-white py-3 rounded-[28px] font-medium text-center hover:opacity-90 transition-opacity"
+        >
+          Uzyskaj Konsultację
+        </button>
       </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50">
+          <div className="absolute inset-0 bg-black/40" onClick={() => setIsModalOpen(false)} />
+          <div className="absolute inset-0 flex items-center justify-center p-4">
+            <div className="relative w-full max-w-md">
+              <button onClick={() => setIsModalOpen(false)} className="absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 z-10">
+                <svg className="w-6 h-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <div className="max-h-[90vh] overflow-auto">
+                <ContactForm isModal={true} onClose={() => setIsModalOpen(false)} />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

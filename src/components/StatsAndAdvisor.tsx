@@ -71,10 +71,10 @@ export function StatsAndAdvisor() {
               rel="noopener noreferrer"
               aria-label="WhatsApp chat"
             >
-              <Image src="/media/Group 59.png" alt="chat" width={36} height={36} className="w-9 h-9" />
+              <Image src="/media/Group 58.png" alt="WhatsApp" width={36} height={36} className="w-9 h-9" />
             </a>
             <a href="tel:+48459567415" aria-label="Call">
-              <Image src="/media/Group 58.png" alt="call" width={36} height={36} className="w-9 h-9" />
+              <Image src="/media/Group 59.png" alt="call" width={36} height={36} className="w-9 h-9" />
             </a>
           </div>
         </div>
