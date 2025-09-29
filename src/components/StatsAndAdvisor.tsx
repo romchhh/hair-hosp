@@ -65,8 +65,17 @@ export function StatsAndAdvisor() {
             <p className="text-sm text-gray-600">Osobisty doradca</p>
           </div>
           <div className="flex gap-3 items-center">
-            <Image src="/media/Group 58.png" alt="call" width={36} height={36} className="w-9 h-9" />
-            <Image src="/media/Group 59.png" alt="chat" width={36} height={36} className="w-9 h-9" />
+            <a
+              href="https://wa.me/48459567415"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp chat"
+            >
+              <Image src="/media/Group 59.png" alt="chat" width={36} height={36} className="w-9 h-9" />
+            </a>
+            <a href="tel:+48459567415" aria-label="Call">
+              <Image src="/media/Group 58.png" alt="call" width={36} height={36} className="w-9 h-9" />
+            </a>
           </div>
         </div>
       </div>

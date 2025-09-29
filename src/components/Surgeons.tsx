@@ -66,8 +66,17 @@ export function Surgeons() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <Image src="/media/Group 58.png" alt="menu" width={36} height={36} className="w-9 h-9" />
-            <Image src="/media/Group 59.png" alt="contact" width={36} height={36} className="w-9 h-9" />
+            <a
+              href="https://wa.me/48459567415"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp chat"
+            >
+              <Image src="/media/Group 59.png" alt="contact" width={36} height={36} className="w-9 h-9" />
+            </a>
+            <a href="tel:+48459567415" aria-label="Call">
+              <Image src="/media/Group 58.png" alt="menu" width={36} height={36} className="w-9 h-9" />
+            </a>
           </div>
         </div>
         <p className="text-sm text-gray-600 mt-3">Które specjalizują się w przeszczepach włosów i są dobierane specjalnie pod kątem Twoich potrzeb i sytuacji</p>

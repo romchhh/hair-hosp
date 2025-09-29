@@ -4,8 +4,8 @@ import { useRef, useState } from "react";
 
 export function Gallery() {
   const images = [
-    { src: "/media/Group 1000007011 2.png", alt: "Przed" },
-    { src: "/media/Group 1000007012 2.png", alt: "Po" },
+    { src: "/media/Frame 1000007011.png", alt: "Przed" },
+    { src: "/media/Group 1000007012.png", alt: "Po" },
   ];
   const [index, setIndex] = useState(0);
   const startX = useRef<number | null>(null);
@@ -96,17 +96,27 @@ export function Gallery() {
           ))}
         </div>
 
-        {/* Dots */}
-        <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              aria-label={`go to slide ${i + 1}`}
-              onClick={() => setIndex(i)}
-              className={`w-2.5 h-2.5 rounded-full ${index === i ? "bg-blue-600" : "bg-gray-300"}`}
-            />
-          ))}
-        </div>
+        {/* Arrow Controls */}
+        <button
+          aria-label="previous slide"
+          onClick={() => index > 0 && setIndex(index - 1)}
+          className="absolute top-1/2 -translate-y-1/2 left-2 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg hover:bg-blue-700 disabled:opacity-30 disabled:pointer-events-none"
+          disabled={index === 0}
+        >
+          <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M12.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L8.414 10l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
+          </svg>
+        </button>
+        <button
+          aria-label="next slide"
+          onClick={() => index < images.length - 1 && setIndex(index + 1)}
+          className="absolute top-1/2 -translate-y-1/2 right-2 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg hover:bg-blue-700 disabled:opacity-30 disabled:pointer-events-none"
+          disabled={index === images.length - 1}
+        >
+          <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M7.293 4.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L11.586 10 7.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+          </svg>
+        </button>
       </div>
     </section>
   );
