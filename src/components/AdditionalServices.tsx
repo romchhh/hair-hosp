@@ -10,7 +10,7 @@ export function AdditionalServices() {
   return (
     <section className="px-4 mt-8">
       <h2 className="text-3xl font-extrabold text-center mb-4">Usługi Dodatkowe</h2>
-      <div className="bg-white rounded-[24px] p-5 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]">
+      <div className="bg-white rounded-[24px] p-5 shadow-[0_-20px_40px_-20px_rgba(0,0,0,0.25),0_20px_40px_-20px_rgba(0,0,0,0.25)]">
         <ul className="space-y-4">
           {services.map((item, i) => (
             <li key={i} className="flex items-start gap-3">

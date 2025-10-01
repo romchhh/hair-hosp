@@ -30,7 +30,7 @@ export function PackageCard() {
 
   return (
     <>
-      <div className="bg-white rounded-[28px] p-5 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.25)]">
+      <div className="bg-white rounded-[28px] p-5 shadow-[0_-20px_40px_-20px_rgba(0,0,0,0.25),0_20px_40px_-20px_rgba(0,0,0,0.25)]">
         <div className="space-y-4">
           {features.map((f, idx) => (
             <div key={idx} className="flex items-start gap-3">
