@@ -131,8 +131,8 @@ export default function PrivacyPage() {
             </p>
             <div className="bg-gray-50 p-4 rounded-lg">
               <p className="text-gray-700"><strong>Hair Hosp</strong></p>
-              <p className="text-gray-600">E-mail: privacy@hairhosp.com</p>
-              <p className="text-gray-600">Telefon: +48 XXX XXX XXX</p>
+              <p className="text-gray-600">E-mail: inbox@uamedtours.com</p>
+              <p className="text-gray-600">Telefon: +48459567415</p>
             </div>
           </section>
 

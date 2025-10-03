@@ -162,8 +162,8 @@ export default function TermsPage() {
             </p>
             <div className="bg-gray-50 p-4 rounded-lg">
               <p className="text-gray-700"><strong>Dział Obsługi Klienta</strong></p>
-              <p className="text-gray-600">E-mail: reklamacje@hairhosp.com</p>
-              <p className="text-gray-600">Telefon: +48 XXX XXX XXX</p>
+              <p className="text-gray-600">E-mail: inbox@uamedtours.com</p>
+              <p className="text-gray-600">Telefon: +48459567415</p>
               <p className="text-gray-600">Termin rozpatrzenia: do 14 dni roboczych</p>
             </div>
           </section>
@@ -201,8 +201,8 @@ export default function TermsPage() {
             </p>
             <div className="bg-gray-50 p-4 rounded-lg">
               <p className="text-gray-700"><strong>Hair Hosp</strong></p>
-              <p className="text-gray-600">E-mail: kontakt@hairhosp.com</p>
-              <p className="text-gray-600">Telefon: +48 XXX XXX XXX</p>
+              <p className="text-gray-600">E-mail: inbox@uamedtours.com</p>
+              <p className="text-gray-600">Telefon: +48459567415</p>
               <p className="text-gray-600">Godziny pracy: Pon-Pt 9:00-18:00</p>
             </div>
           </section>
