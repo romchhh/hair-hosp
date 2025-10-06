@@ -6,6 +6,9 @@ export function Gallery() {
   const images = [
     { src: "/media/Frame 1000007011.png", alt: "Przed" },
     { src: "/media/Group 1000007012.png", alt: "Po" },
+    { src: "/media/Group 1000007024.png", alt: "Galeria 1" },
+    { src: "/media/Group 1000007024.png", alt: "Galeria 2" },
+    { src: "/media/Group 1000007024.png", alt: "Galeria 3" },
   ];
   const [index, setIndex] = useState(0);
   const startX = useRef<number | null>(null);
